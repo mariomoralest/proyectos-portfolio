@@ -1,0 +1,81 @@
+/* Rejilla de tarjetas: se adapta sola al ancho (responsive sin media queries) */
+.pp-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 1.5rem;
+	margin: 2rem 0;
+}
+
+.pp-card {
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pp-card__img img {
+	display: block;
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+}
+
+.pp-card__body {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 1.25rem;
+}
+
+.pp-card__titulo {
+	margin: 0 0 0.5rem;
+	font-size: 1.2rem;
+}
+
+.pp-card__texto p {
+	margin: 0 0 1rem;
+	color: #444;
+}
+
+.pp-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin: 0 0 1rem;
+	padding: 0;
+	list-style: none;
+}
+
+.pp-tags li {
+	padding: 0.2rem 0.6rem;
+	font-size: 0.8rem;
+	background: #eef6f7;
+	color: #2f6a72;
+	border-radius: 999px;
+}
+
+/* margin-top:auto empuja el botón al fondo para que todas las tarjetas queden alineadas */
+.pp-card__boton {
+	margin-top: auto;
+	align-self: flex-start;
+	padding: 0.55rem 1rem;
+	background: #2f6a72; /* contraste suficiente con blanco (accesibilidad AA) */
+	color: #fff;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.pp-card__boton:hover,
+.pp-card__boton:focus-visible {
+	background: #23525a;
+	color: #fff;
+}
+
+.pp-card__boton:focus-visible {
+	outline: 3px solid #f0b429;
+	outline-offset: 2px;
+}
